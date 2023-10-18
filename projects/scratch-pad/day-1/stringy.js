@@ -171,15 +171,17 @@ function longest(stringOne, stringTwo) {
  *
  * TIP: How can we compare Strings? Is 'a' greater than or less than 'b'?
  */
-function sortAscending(stringOne, stringTwo) {
+function sortAscending(stringTwo, stringOne) {
     // YOUR CODE BELOW HERE //
     // Use the localeCompare method to compare the strings
   return stringOne.localeCompare(stringTwo);
-
-
+  
+  
     // YOUR CODE ABOVE HERE //
-}
-console.log(sortAscending("x", "y"))
+  }
+console.log(sortAscending("x", "y"));
+console.log(sortAscending("y", "y"));
+console.log(sortAscending("y", "x"));
 
 /**
  * Given two Strings, return 1 if the first is lower in alphabetical order than
@@ -191,11 +193,14 @@ console.log(sortAscending("x", "y"))
 function sortDescending(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
     // Use the localeCompare method to compare the strings
-    return stringTwo.localeCompare(stringOne);
+    return stringOne.localeCompare(stringTwo);
 
     // YOUR CODE ABOVE HERE //
 }
 console.log(sortDescending("a", "b"))
+console.log(sortDescending("b", "b"))
+console.log(sortDescending("b", "a"))
+
 
 // DON'T REMOVE THIS CODE //////////////////////////////////////////////////////
 if((typeof process !== 'undefined') &&

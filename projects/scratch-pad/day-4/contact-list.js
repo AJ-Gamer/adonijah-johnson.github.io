@@ -35,10 +35,7 @@
 
 // YOUR CODE GOES BELOW HERE //
 function makeContact(id, nameFirst, nameLast) {
-    createContact = {id: '',
-    nameFirst: '',
-     nameLast: '',
- }
+    return { id, nameFirst, nameLast};
 } 
 
 
@@ -56,13 +53,24 @@ function makeContactList() {
             contacts.push(contact);
         },
         findContact: function(fullName) {
-            // Implement the logic to find a contact by full name here.
+            const [firstName, lastName] = fullName.split(' ');
+
+            for (const contact of contacts) {
+                if (contact.nameFirst === firstName && contact.nameLast === lastName) {
+                    return contact;
+                }
+            }
+
+            return undefined; // Contact not found
         },
         removeContact: function(contact) {
-            // Implement the logic to remove a contact here.
+            const index = contacts.indexOf(contact);
+            if (index !== -1) {
+                contacts.splice(index, 1);
+            }
         },
         printAllContactNames: function() {
-            // Implement the logic to print all contact names here.
+            return contacts.map(contact => `${contact.nameFirst} ${contact.nameLast}`).join('\n');
         }
     };
 }

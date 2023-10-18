@@ -40,12 +40,46 @@ function createLessThanFilter(base) {
  */
 function createStartsWithFilter(startsWith) {
     // YOUR CODE BELOW HERE //
-    // Return a function that tests if a given string starts with the startsWith character
-  return function(inputString) {return inputString.charAt(0) === startsWith;
-  };
-    
+    //Convert startsWith to lowercase to make it case-insensitive
+    startsWith = startsWith.toLowerCase();
+    return function(value) {
+    // Convert value to lowercase to make it case-insensitive
+    value = value.toLowerCase();
+    switch (startsWith) {
+       // Add cases for each alphabetical character
+       case 'a':
+       case 'b':
+       case 'c':
+       case 'd':
+       case 'e':
+       case 'f':
+       case 'g':
+       case 'h':
+       case 'i':
+       case 'j':
+       case 'k':
+       case 'l':
+       case 'm':
+       case 'n':
+       case 'o':
+       case 'p':
+       case 'q':
+       case 'r':
+       case 's':
+       case 't':
+       case 'u':
+       case 'v':
+       case 'w':
+       case 'x':
+       case 'y':
+       case 'z':
+         return value.startsWith(startsWith);
+       default:
+         return false; // Default case for characters not in the switch statement
+     }
+   };
     // YOUR CODE ABOVE HERE //
-}
+} //Tested this code in replit and it seems to work fine.
 
 /** 
  * Given a endsWith character, which will be a single character, return a 
@@ -55,9 +89,44 @@ function createStartsWithFilter(startsWith) {
 function createEndsWithFilter(endsWith) {
     // YOUR CODE BELOW HERE //
     // Return a function that tests if a given string ends with the endsWith character
-  return function(inputString) {return inputString.endsWith(endsWith);
+   //Convert endsWith to lowercase to make it case-insensitive
+   endsWith = endsWith.toLowerCase();
+   return function(value) {
+   // Convert value to lowercase to make it case-insensitive
+   value = value.toLowerCase();
+   switch (endsWith) {
+      // Add cases for each alphabetical character
+      case 'a':
+      case 'b':
+      case 'c':
+      case 'd':
+      case 'e':
+      case 'f':
+      case 'g':
+      case 'h':
+      case 'i':
+      case 'j':
+      case 'k':
+      case 'l':
+      case 'm':
+      case 'n':
+      case 'o':
+      case 'p':
+      case 'q':
+      case 'r':
+      case 's':
+      case 't':
+      case 'u':
+      case 'v':
+      case 'w':
+      case 'x':
+      case 'y':
+      case 'z':
+        return value.endsWith(endsWith);
+      default:
+        return false; // Default case for characters not in the switch statement
+    }
   };
-    
     // YOUR CODE ABOVE HERE //
 }
 

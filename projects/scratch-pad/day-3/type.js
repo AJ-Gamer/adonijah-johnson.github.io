@@ -47,14 +47,14 @@ function isObject(value) {
  */
 function isCollection(value) {
     // YOUR CODE BELOW HERE //
-    return Array.isArray(value) || (typeof value === "object" && value !== null);
-}
-// I tested this in replit and it functions properly.
-console.log(isCollection([1, 2, 3])); // true (Array)
-console.log(isCollection({ name: "John" })); // true (Object)
-console.log(isCollection("Not a collection")); // false (String)    
-    // YOUR CODE ABOVE HERE //
+    return (Array.isArray(value) || (typeof value === "object" && value !== null));
 
+   
+    // YOUR CODE ABOVE HERE //
+} //Tested this in replit and the console logs are accurate so I don't know what Im doing wrong.
+console.log(isCollection([1, 2, 3])); // true (Array)
+console.log(isCollection({ name: "Adonijah" })); // true (Object)
+console.log(isCollection("Not a collection")); // false (String)
 
 /**
  * Given an input value, return the type of the value as a String
@@ -90,7 +90,6 @@ function typeOf(value) {
     }
 }
     // YOUR CODE ABOVE HERE //
-    //Tested this code in replit and it seems to work properly.
     console.log(typeOf(134)); // "number"
     console.log(typeOf("javascript")); // "string"
     console.log(typeOf([1, 2, 3])); // "array"

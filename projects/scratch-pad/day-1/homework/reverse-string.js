@@ -19,29 +19,30 @@
  *  d. how do you concatenate Strings? What operator do we use?
  */
 
+// Define the reverseString function first
 function reverseString(input) {
-    // YOUR CODE GOES BELOW HERE //
-      // Create a variable to store the reversed string
-      var reversedString = '';
-    
-      // Iterate through the input string in reverse order
-      for (let i = input.length - 1; i >= 0; i--) {
-        // Add each character to the reversed string
-        reversedString += input[i];
-      }
-    
-      return reversedString;
-    }
-    
-    // Test the function
-    var originalString = 'Reversed String';
-    const reversed = reverseString(originalString);
-    console.log(reversed); // Output: 'gnirtS desreveR'
+  // Create a variable to store the reversed string
+  var reversedString = '';
+
+  // Iterate through the input string in reverse order
+  for (let i = input.length - 1; i >= 0; i--) {
+    // Add each character to the reversed string
+    reversedString += input[i];
+  }
+
+  return reversedString;
+}
+
+// Now you can call the function
+var originalString = 'Reversed String';
+let reversed = reverseString(originalString);
+console.log(reversed); // Output: 'gnirtS desreveR'
+
     
     
     
     // YOUR CODE GOES ABOVE HERE //
-}
+
 
 
 
