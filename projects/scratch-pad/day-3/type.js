@@ -47,7 +47,7 @@ function isObject(value) {
  */
 function isCollection(value) {
     // YOUR CODE BELOW HERE //
-    return (Array.isArray(value) || (typeof value === "object" && value !== null));
+    return (Array.isArray(value) || (typeof value === "object" && value !== null && !(value instanceof Date)));
 
    
     // YOUR CODE ABOVE HERE //
