@@ -73,11 +73,10 @@ function capitalizeAllWords(string) {
 //////////////////////////////////////////////////////////////////////
 
 function welcomeMessage(object) {
+  console.log(object.name)
     if (object && object.name) {
-        return `Welcome ${object.name}!`;
-      } else {
-        return 'Welcome!';
-      }
+        return `Welcome ${object.name[0].toUpperCase() + object.name.slice(1)}!`;
+    } 
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -86,7 +85,7 @@ function welcomeMessage(object) {
 
 function profileInfo(object) {
     if (object && object.name && object.species) {
-        return `${object.name} is a ${object.species}`;
+        return `${object.name[0].toUpperCase() + object.name.slice(1)} is a ${object.species[0].toUpperCase() + object.species.slice(1)}`;
       } else {
         return 'Incomplete profile information.';
       }
