@@ -60,7 +60,7 @@ animals.push(animal);
 console.log(animals);
 var duck = {
   species: 'duck',
-  name: 'Jerome',
+  name: 'Jennifer',
   noises: ['quack', 'honk', 'sneeze', 'woosh']
 };
 animals.push(duck);

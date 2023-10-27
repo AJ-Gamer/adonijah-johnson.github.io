@@ -242,7 +242,35 @@ var _ = {};
 *   _.every([2,4,6], function(e){return e % 2 === 0}) -> true
 *   _.every([1,2,3], function(e){return e % 2 === 0}) -> false
 */
+_.every = function(collection, func) {
+    let passes = [];
+    if (Array.isArray(collection)) {
+        if (func === undefined) {
+            for (let i = 0; i < collection.length; i++) {
+                if (collection[1]) {
+                    passes.push(collection[i]);
+                }
+            }
+        } else { for (let i = 0; i < collection.length; i++){
+            if (func(collection[i], i, collection ) === true) {
+                passes.push(collection[i]);
+            }
+        }
 
+        }
+    } else {
+        if (func === undefined) {
+
+        } else {
+
+        }
+    }
+    if (passes.length === collection.length) {
+        return true
+    } else {
+        return false
+    };
+};
 
 /** _.some
 * Arguments:
@@ -285,6 +313,18 @@ var _ = {};
 *   _.reduce([1,2,3], function(previousSum, currentValue, currentIndex){ return previousSum + currentValue }, 0) -> 6
 */
 
+_.reduce = function (array, func, seed) {
+    let output;
+    if (seed === undefined) {
+    
+    } else {
+      output = seed
+      for (let i = 0; i < array.length; i++) {
+        output = func(output, array[i], i);
+      }
+    }
+    return output;
+}
 
 /** _.extend
 * Arguments:
