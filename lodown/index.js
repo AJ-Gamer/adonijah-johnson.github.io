@@ -8,6 +8,8 @@
  * 
  * @param {Array or Object} collection: The collection over which to iterate.
  * @param {Function} action: The Function to be applied to each value in the collection.
+ * 
+ * @return {Undefined}: Returning this method itself always returns undefined
  */
 function each(collection, action) {
     if (Array.isArray(collection)) {
@@ -28,6 +30,8 @@ module.exports.each = each;
  * identity: Designed to accept an input value and return it.
  * 
  * @param {value} datatypes: String, Number, Boolean, Array, Object, Function, Undefined, Null, NaN, Ifinity, & -Ifinity
+ * 
+ * @return {value}: This returns the given value.
  */
 function identity(value){
     return value;
@@ -39,6 +43,8 @@ module.exports.identity = identity
  * Array.isArray: A method designed to evaluate if a value is an array.
  * 
  * @param {value} datatypes: String, Number, Boolean, Array, Object, Function, Undefined, Null, NaN, Ifinity, & -Ifinity
+ * 
+ * @return {value}: This returns the type of the given value as a string.
  */
 function typeOf(value){
   if (value === null) {
@@ -68,6 +74,8 @@ module.exports.typeOf = typeOf
  * 
  * @param {array} array: stores multiple values and elements in one variable
  * @param {number} number: any numerical value
+ * 
+ * @return {array[0]}: Returns the first element in an array.
  */
 function first(array, number){
   if (!Array.isArray(array)) {
@@ -84,10 +92,12 @@ function first(array, number){
 module.exports.first = first
 
 /**
- * last: Designed to return the last item in an array.
+ * last: Designed to return the last element in an array.
  * 
  * @param {array} array: stores multiple values and elements in one variable
  * @param {number} number: any numerical value
+ * 
+ * @return {array.length - 1}: Returns the last element in an array.
  */
 function last(array, number){
   if (!Array.isArray(array)) {
@@ -111,6 +121,8 @@ module.exports.last = last
  * 
  * @param {array} array: stores multiple values and elements in one variable
  * @param {value} datatypes: String, Number, Boolean, Array, Object, Function, Undefined, Null, NaN, Ifinity, & -Ifinity
+ * 
+ * @return {value}: Returns the first index of <value> in <array>.
  */
 function indexOf(array, value){
   for (let i = 0; i < array.length; i++) {
@@ -127,6 +139,8 @@ module.exports.indexOf = indexOf
  * 
  * @param {array} array: stores multiple values and elements in one variable
  * @param {value} datatypes: String, Number, Boolean, Array, Object, Function, Undefined, Null, NaN, Ifinity, & -Ifinity
+ * 
+ * @return {value}: Returns true or false, based on if <array> contains <value>
  */
 function contains(array, value){
   return (array.includes(value) === true) ? true : false;
@@ -138,6 +152,8 @@ module.exports.contains = contains
  * 
  * @param {array} array: stores multiple values and elements in one variable
  * @param {value} datatypes: String, Number, Boolean, Array, Object, Function, Undefined, Null, NaN, Ifinity, & -Ifinity
+ * 
+ * @return {array}: Returns an array with only one of each given value.
  */
 function unique(array, value){
   var uniqueArray = [];
@@ -156,6 +172,8 @@ module.exports.unique = unique
  * 
  * @param {array} array: stores multiple values and elements in one variable
  * @param {Function} action: The Function to be applied to each value in the collection.
+ * 
+ * @return {array}: Returns a new array with one of each of the given values.
  */
 function filter(array, func){
   var filteredArray = [];
@@ -175,6 +193,8 @@ module.exports.filter = filter
  * 
  * @param {array} array: stores multiple values and elements in one variable
  * @param {Function} action: The Function to be applied to each value in the collection.
+ * 
+ * @return {array}: Returns a shallow copy of the given array containing just the elements that pass the test.
  */
 function reject(array, func){
   var rejectedArray = [];
@@ -194,6 +214,9 @@ module.exports.reject = reject
  * 
  * @param {array} array: stores multiple values and elements in one variable
  * @param {Function} action: The Function to be applied to each value in the collection.
+ * 
+ * @return {array}: Returns an array containing the elements that satisfy the given condition
+ * and a second array contains the remaining elements.
  */
 function partition(array, func){
   var truthyArray = [];
@@ -214,6 +237,8 @@ module.exports.partition = partition
  * 
  * @param {Array or Object} collection: The collection over which to iterate.
  * @param {Function} action: The Function to be applied to each value in the collection.
+ * 
+ * @return {array}: Returns a new array and elements of arrays are the result of the callback function.
  */
 function map(collection, func){
   var mappedArray = [];
@@ -237,6 +262,8 @@ module.exports.map = map
  * 
  * @param {array} array: stores multiple values and elements in one variable
  * @param {Property} Property: The values associated with a JavaScript object.
+ * 
+ * @return {array}: Returns an array of values corresponding to the specified object key.
  */
 function pluck(arrayOfObjects, property){
   return _.map(arrayOfObjects, function(obj) {
@@ -251,6 +278,8 @@ module.exports.pluck = pluck
  * 
  * @param {Array or Object} collection: The collection over which to iterate.
  * @param {Function} action: The Function to be applied to each value in the collection.
+ * 
+ * @return {Boolean}: Returns true if the function returns true for all elements, and false if false returns for all elements.
  */
 function every(collection, func){
   if (Array.isArray(collection)) {
@@ -293,6 +322,9 @@ module.exports.every = every
  * 
  * @param {Array or Object} collection: The collection over which to iterate.
  * @param {Function} action: The Function to be applied to each value in the collection.
+ * 
+ * @return {Boolean}: returns true if, in the array, it finds an element for which the provided function returns true,
+ * otherwise it returns false.
  */
 function some(collection, func){
   if (Array.isArray(collection)) {
@@ -329,7 +361,10 @@ module.exports.some = some
  * 
  * @param {Array} array: stores multiple values and elements in one variable
  * @param {Function} action: The Function to be applied to each value in the collection.
- * @param {Seed} seed: A starting point for a hidden sequence of numbers that are uniformly distributed throughout their possible range.
+ * @param {Seed} seed: A starting point for a hidden sequence of numbers that are uniformly distributed throughout
+ * their possible range.
+ * 
+ * @return {value}: Returns the function's accumulated result.
  */
 function reduce(array, func, seed){
 let output;
@@ -358,6 +393,8 @@ module.exports.reduce = reduce
  * @Param (Spread Syntax) ...: Allows an iterable, such as an array or string, to be expanded in places where zero or more arguments
  * or elements are expected. In an object literal, the spread syntax enumerates the properties
  * of an object and adds the key-value pairs to the object being created.
+ * 
+ * @Return {subclass}: Creates a new class that is a modified version of an existing class, inheriting its properties and methods.
  */
 function extend(object1, ...restOfObjects){
   for (let i = 0; i < restOfObjects.length; i++) {

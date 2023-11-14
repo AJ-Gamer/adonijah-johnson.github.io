@@ -1,0 +1,19 @@
+{
+  "name": "aj-gamer",
+  "version": "1.0.0",
+  "description": "README",
+  "main": "index.js",
+  "scripts": {
+    "test": "istanbul cover _mocha -- test/ -R spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AJ-Gamer/adonijah-johnson.github.io.git#main"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AJ-Gamer/adonijah-johnson.github.io/issues"
+  },
+  "homepage": "https://github.com/AJ-Gamer/adonijah-johnson.github.io/tree/main#readme"
+}
